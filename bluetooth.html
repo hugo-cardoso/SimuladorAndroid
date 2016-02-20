@@ -1,0 +1,232 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
+      <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    </head>
+
+<body>
+
+<style>
+  
+  body {
+    background-color: white;
+  }
+
+</style>
+
+<div class="page">
+
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+  <header style="background-color: #263238;" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <a href="javascript: history.go(-1)">
+      <i class="material-icons">arrow_back</i>
+      </a>
+      <span style="margin-left: 30px;" class="title">Bluetooth</span>
+      <div class="mdl-layout-spacer"></div>
+      <i class="material-icons">search</i>
+      <!-- Right aligned menu below button -->
+      <button id="demo-menu-lower-right"
+              class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+        <li id="show-dialog" class="mdl-menu__item" disabled="false">Atualizar</li>
+        <li class="mdl-menu__item menu2 abrir1" disabled="false">Renomear o dispositivo</li>
+        <a href="wifi_avan.html"><li class="mdl-menu__item">Exibir arquivos recebidos</li></a>
+      </ul>
+      <!-- Final do botão -->
+      </div>
+      <div class="sub_header ">
+
+      <div class="mdl-layout__header-row" style="padding: 0 35px 9px 32px !important;">
+
+        <div style="float: left;">
+          <label class="ativ_desativ" id="label">Desativado</label>
+        </div>
+        <div class="mdl-layout-spacer"></div>
+        <div style="float: right;">
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+            <input type="checkbox" id="switch-2" class="mdl-switch__input">
+            <span class="mdl-switch__label"></span>
+          </label>
+        </div>
+      </div>
+
+      </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+      <!-- WIFI Ativado -->
+      <div style="display: none;" id="ativo">
+        <label class="lbl">Dispositivos pareados</label>
+        <ul class="demo-list-icon mdl-list">
+          <li class="mdl-list__item borda_bottom padding_right16 abrir1">
+            <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">bluetooth</i>
+            MOTO 360 AA94
+          </span>
+          <div style="float: right;">
+            <i class="material-icons mdl-list__item-icon">settings</i>
+          </div>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16">
+            <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">phone</i>
+            device :: motorola
+          </span>
+          <div style="float: right;">
+            <i class="material-icons mdl-list__item-icon">settings</i>
+          </div>
+          </li>
+        </ul>
+        <label class="lbl">Dispositivos disponíveis</label>
+        <div style="padding-left: 16px; padding-right: 16px;">
+        <label style="font-size: 12px; color: #546E7A; line-height: 10px;"><span id="nomeDispositivo">XT1580</span> está visível para dispositivos próximos enquanto as Configurações de Bluetooth estão ativadas.</label>
+        </div>
+      </div>
+
+      <!-- WIFI Desativado -->
+      <div align="center" id="desativado">
+           
+        <p class="lbl_wifi_desativado" style="margin-top: 180px;" >Quando o Bluetooth esta ligado, seu dispositivo pode se comunicar com outros dispositivos próximos com Bluetooth</p>
+
+      </div>
+
+      <!-- WIFI Ativando -->
+      <div style="display: none;" align="center" id="ativando">
+        
+        <p class="lbl_wifi_desativado"style="margin-top: 200px;">Ligando Bluetooth...</p>
+
+      </div>
+
+
+      <!-- WIFI Desativando -->
+      <div style="display: none;" align="center" id="desativando">
+        
+        <p class="lbl_wifi_desativado"style="margin-top: 200px;">Desligando Bluetooth...</p>
+
+      </div>
+
+
+
+     <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+      <map name="navbar" id="navbar">
+      <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"     />
+      </map>
+
+    </div>
+  </main>
+</div>
+
+</div>
+
+    <body>
+
+  <dialog id="modal1" class="mdl-dialog">
+    <h6 class="mdl-dialog__title">Renomear o dispositivo</h6>
+    <div class="mdl-dialog__content">
+  <div class="mdl-textfield mdl-js-textfield">
+    <input class="mdl-textfield__input" type="text" id="sample1" value="XT1580">
+    <label class="mdl-textfield__label" for="sample1"></label>
+  </div>
+
+    </div>
+    <div class="mdl-dialog__actions">
+      <button id="renomear" type="button" class="mdl-button">RENOMEAR</button>
+      <button type="button" class="mdl-button close1">CANCELAR</button>
+    </div>
+  </dialog>
+
+      <script>
+
+      $("#renomear").click(function (){
+        var dialog1 = document.querySelector('#modal1');
+        $("#nomeDispositivo").html($("#sample1").val());
+        dialog1.close();
+      })
+
+      $("#switch-2").click(function () {
+        if( $(this).prop("checked") == true){
+          $("#label").html("Ativado");
+          $("#desativado").hide();
+          $("#ativando").show();
+          $("#switch-2").attr("disabled", true);
+          setTimeout(function(){
+          $("#ativando").hide();
+          $("#ativo").show();
+          $(".menu1").removeAttr('disabled');
+          $(".menu2").removeAttr('disabled');
+          $(".menu3").removeAttr('disabled');
+          $("#switch-2").removeAttr('disabled');
+          }, 1500);
+        }
+        if( $(this).prop("checked") == false){
+          $("#label").html("Desativado");
+          $("#ativo").hide();
+          $("#desativando").show();
+          $("#switch-2").attr("disabled", true);
+          setTimeout(function(){ 
+          $("#switch-2").removeAttr('disabled');
+          $("#desativando").hide();
+          $("#desativado").show();
+          $(".menu1").attr('disabled', true);
+          $(".menu2").attr('disabled', true);
+          $(".menu3").attr('disabled', true);
+          }, 3000);
+        }
+      });
+
+      $("#checkbox-3").click(function () {
+        if( $(this).prop("checked") == true){
+          $("#opc_avan1").show();
+        }
+        if( $(this).prop("checked") == false){
+          $("#opc_avan1").hide();
+        }
+      });
+
+      $("#checkbox-2").click(function () {
+        if( $(this).prop("checked") == true){
+          $("#opc_avan").show();
+        }
+        if( $(this).prop("checked") == false){
+          $("#opc_avan").hide();
+        }
+      });
+
+      </script>
+
+      <script>
+        var button1 = document.querySelector('.abrir1');
+        var dialog1 = document.querySelector('#modal1');
+        button1.addEventListener('click', function() {
+          dialog1.showModal();
+          // FECHAMENTO DO MODAL NO BOTÃO //
+          $('.close1').click(function() {
+            dialog1.close();
+          });
+        });
+      </script>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    </body>
+  </html>
