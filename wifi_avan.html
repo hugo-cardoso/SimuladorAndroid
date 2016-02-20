@@ -1,0 +1,219 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-cyan.min.css" />
+      <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    </head>
+
+<body>
+
+<style>
+  
+  body {
+    background-color: white;
+  }
+
+</style>
+
+<div class="page">
+
+<!-- The drawer is always open in large screens. The header is always shown,
+  even in small screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+            mdl-layout--fixed-header">
+  <header style="background-color: #263238;" class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <a href="javascript: history.go(-1)">
+      <i class="material-icons">arrow_back</i>
+      </a>
+      <span style="margin-left: 30px;" class="title">Wi-Fi avançado</span>
+      <div class="mdl-layout-spacer"></div>
+      <i class="material-icons">search</i>
+      </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+
+        <ul class="demo-list-icon mdl-list">
+          <li class="mdl-list__item borda_bottom padding_right16">
+            <span class="mdl-list__item-primary-content">
+            <p style="font-size: 16px; padding-top: 10px; line-height: 15px;">
+            <span class="conectado_wifi" style="width: 100%;">Notificação de rede</span>
+            <label style="font-size: 13px; color: #546E7A;">Notificar sempre que houver uma rede aberta disponível</label>
+            </p>
+        </span>
+        <div style="float: right;">
+          <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-2">
+            <input type="checkbox" id="switch-2" class="mdl-switch__input" checked>
+            <span class="mdl-switch__label"></span>
+          </label>
+        </div>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16">
+            <span class="mdl-list__item-primary-content">
+            <p style="font-size: 16px; padding-top: 10px; line-height: 15px;">
+            <span class="conectado_wifi" style="width: 100%;">Verificação sempre disponível</span>
+            <label style="font-size: 13px; color: #546E7A;">Permitir que o serviço de localização do Google e outros apps verifiquem rede, mesmo que Wi-Fi esteja desligado</label>
+            </p>
+            </span>
+            <div style="float: right;">
+              <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="switch-3">
+                <input type="checkbox" id="switch-3" class="mdl-switch__input" checked>
+                <span class="mdl-switch__label"></span>
+              </label>
+            </div>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16 abrir">
+            <span class="mdl-list__item-primary-content">
+            <p style="font-size: 16px; padding-top: 10px; line-height: 15px;">
+            <span class="conectado_wifi" style="width: 100%;">Manter Wi-Fi durante inatividade</span>
+            <label id="inatividadelbl" style="font-size: 13px; color: #546E7A;">Sempre</label>
+            </p>
+            </span>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16 abrir1">
+            <span class="mdl-list__item-primary-content">
+            <p style="font-size: 16px; padding-top: 10px; line-height: 15px;">
+            <span class="conectado_wifi" style="width: 100%;">Banda de frequência Wi-Fi</span>
+            <label id="frequencialbl" style="font-size: 13px; color: #546E7A;">Automático</label>
+            </p>
+            </span>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16 abrir1">
+            <span class="minilist_item">Instalar certificados</span>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16 abrir1">
+            <span class="minilist_item">Wi-Fi Direct</span>
+          </li>
+          <li class="mdl-list__item borda_bottom padding_right16 abrir1">
+            <span class="minilist_item">Botão WPS</span>
+          </li>
+          <li class="mdl-list__item borda_bottom-min padding_right16 abrir1">
+            <span class="minilist_item">Entrada de PIN WPS</span>
+          </li>
+        </ul>
+        <label class="lbl_gray1">Endereço MAC</label>
+        <label class="lbl_gray1">84:10:0d:30:46:36</label>
+        <br>
+        <label class="lbl_gray1">Endereço IP</label>
+        <label class="lbl_gray1">Não disponível</label>
+
+      <!-- MODALS -->
+
+  <dialog id="modal" class="mdl-dialog">
+    <h4 style="margin-bottom: 10px;" class="mdl-dialog__title">Manter Wi-Fi durante inatividade?</h4>
+    <div style="margin-left: 20px;" class="mdl-dialog__content">
+    <form id="myForm">
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-1">
+        <input type="radio" id="option-1" class="mdl-radio__button" name="options" value="Sempre" checked>
+        <span class="mdl-radio__label">Sempre</span>
+      </label>
+      <br>
+      <br>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-2">
+        <input type="radio" id="option-2" class="mdl-radio__button" name="options" value="Somente quando conectado">
+        <span class="mdl-radio__label">Somente quando conectado</span>
+      </label>
+      <br>
+      <br>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-3">
+        <input type="radio" id="option-3" class="mdl-radio__button" name="options" value="Nunca">
+        <span class="mdl-radio__label">Nunca</span>
+      </label>
+    </form>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button id="close" type="button" class="mdl-button close1">CANCELAR</button>
+    </div>
+  </dialog>
+
+  <dialog id="modal1" class="mdl-dialog">
+    <h4 style="margin-bottom: 10px;" class="mdl-dialog__title">Banda de frequência Wi-Fi</h4>
+    <div style="margin-left: 20px;" class="mdl-dialog__content">
+    <form id="myForm1">
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-4">
+        <input type="radio" id="option-4" class="mdl-radio__button" name="options1" value="Automático" checked>
+        <span class="mdl-radio__label">Automático</span>
+      </label>
+      <br>
+      <br>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-5">
+        <input type="radio" id="option-5" class="mdl-radio__button" name="options1" value="Apenas 5 Ghz">
+        <span class="mdl-radio__label">Apenas 5 Ghz</span>
+      </label>
+      <br>
+      <br>
+      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-6">
+        <input type="radio" id="option-6" class="mdl-radio__button" name="options1" value="Apenas 2,4 Ghz">
+        <span class="mdl-radio__label">Apenas 2,4 Ghz</span>
+      </label>
+    </form>
+    </div>
+    <div class="mdl-dialog__actions">
+      <button id="close1" type="button" class="mdl-button close1">CANCELAR</button>
+    </div>
+  </dialog>
+
+     <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+      <map name="navbar" id="navbar">
+      <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"     />
+      </map>
+
+    </div>
+  </main>
+</div>
+
+</div>
+
+    <body>
+
+
+    </body>
+      <script>
+        var button = document.querySelector('.abrir');
+        var dialog = document.querySelector('#modal');
+        // ABERTURA DO MODAL//
+        button.addEventListener('click', function() {
+          dialog.showModal();
+          // FECHAMENTO DO MODAL NO BOTÃO //
+          $('#close').click(function() {
+            dialog.close();
+          });
+        });
+        // FECHAMENTO DO MODAL E ALTERAÇÃO DO INATIVIDADE //
+        $('input[name=options]', '#myForm').click(function(){
+          $("#inatividadelbl").html($('input[name=options]:checked', '#myForm').val());
+          dialog.close();
+        })
+      </script>
+      <script>
+        var button1 = document.querySelector('.abrir1');
+        var dialog1 = document.querySelector('#modal1');
+        button1.addEventListener('click', function() {
+          dialog1.showModal();
+          // FECHAMENTO DO MODAL NO BOTÃO //
+          $('#close1').click(function() {
+            dialog1.close();
+          });
+        });
+        // FECHAMENTO DO MODAL E ALTERAÇÃO DO INATIVIDADE //
+        $('input[name=options1]', '#myForm1').click(function(){
+          $("#frequencialbl").html($('input[name=options1]:checked', '#myForm1').val());
+          dialog1.close();
+        })
+      </script>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </html>
