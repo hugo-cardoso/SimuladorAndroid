@@ -2,18 +2,82 @@
   <html>
     <head>
       <meta charset="UTF-8">
-      <!--Import Google Icon Font-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0 maximum-scale=1"/>
-      <link type="text/css" rel="stylesheet" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-cyan.min.css" />
+      <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     </head>
 <body>
 
+<style>
+
+  .notf{
+    width: 360px; 
+    height: 20px; 
+    background-color: black;
+    float: left;
+  }
+  
+  .notf_bar{
+    width: 330px;
+    height: 50px;
+    margin-left: 14px;
+    align-items: center;
+    display: flex;
+    background-color: rgb(55, 66, 70);
+    color: white;
+  }
+
+  .notf_bar1{
+    font-size: 15px;
+    margin-left: 14px;
+    margin-top: 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 15px;
+  }
+
+</style>
+
 <div class="display">
+
+<div id="abrir" class="notf">
+  <div style="padding-right: 5px; color: white;" align="right">
+    <i style="font-size: 17px;line-height: 14px;" class="material-icons">network_wifi</i>
+    <i style="font-size: 17px;line-height: 14px;" class="material-icons">network_cell</i>
+    <i style="font-size: 17px; line-height: 14px;" class="material-icons">battery_full</i>
+    <span style="font-size: 14px; color: white; line-height: 14px;">11:35</span>
+  </div>
+</div>
+
+<div id="notif" style="width: 360px; height: 573px; position: absolute; display: none; top: 10px; background: rgba(0, 0, 0, .5);"> 
+  <div id="abrir1" class="notf_bar">
+    
+    <p class="notf_bar1">11:35 <br><span style="font-size: 11px;">21 de Fevereiro de 2016</span></p>
+    <div class="mdl-layout-spacer"></div>
+    <i style="font-size: 20px;" class="material-icons">network_wifi</i>
+    <i style="font-size: 20px;" class="material-icons">network_cell</i>
+    <i style="font-size: 20px;" class="material-icons">battery_full</i>
+    <i style="color: #04BBCE;" class="material-icons padding_right16">account_circle</i>
+
+  </div>
+  <div style="width: 330px; height: 10px; background-color: #253238; margin-left: 14px;"> </div>
+  <div id="notif1" style="width: 330px; height: 300px; background-color: #253238; display: none; margin-left: 14px;"> </div>
+  
+    
+
+    <div style="width: 330px; height: 60px; background-color: white; border-radius: 3px; margin-left: 14px; margin-top: 10px;"></div>
+
+  <!-- Colored icon button -->
+<div align="center" style="width: 330px;">
+  <button id="fechar_notif" style="position: absolute; bottom: 0px;" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+    <i style="color: white;" class="material-icons">keyboard_arrow_up</i>
+  </button>
+</div>
+</div>
 
   <iframe src="configurar.html" style="width: 360px; height: 600px;" frameborder="0"></iframe>
 
@@ -23,11 +87,32 @@
  -->
 </div>
 
+<script>
+  
+  $("#abrir").click(function  () {
+    $("#notif").slideToggle("slow");
+  })
+  $("#fechar_notif").click(function  () {
+    $("#notif").slideToggle("slow");
+  })
+  $("#abrir1").click(function  () {
+    $("#notif1").slideToggle("slow");
+    if($("#abrir1").height() == 50){
+        $(this).animate({
+          height: 120
+        })
+    }
+    if($("#abrir1").height() == 120){
+        $(this).animate({
+          height: 50
+        })
+    }
+  })
 
+</script>
 
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-      <script type="text/javascript" src="js/materialize.min.js"></script>
     </body>
   </html>
