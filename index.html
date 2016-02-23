@@ -85,7 +85,7 @@
       </span>
       <span id="barra_maior" style="display: none;">
         <i style="font-size: 20px; margin-right: 10px;" class="material-icons">battery_full</i>
-        <a href="configurar.html" target="iframe"><i style="font-size: 20px; margin-right: 10px;" class="material-icons">settings</i></a>
+        <a href="configurar.html" target="iframe"><i id="configurar" style="font-size: 20px; margin-right: 10px;" class="material-icons">settings</i></a>
       </span>
     </div>
     <i style="color: #04BBCE; position: absolute; right: 10px; top: 10px; " class="material-icons padding_right16">account_circle</i>
@@ -261,6 +261,10 @@
     else if($(this).html() == "bluetooth"){
       $(this).html("bluetooth_disabled").css("color", "#545F65");
     }
+  })
+  
+  $("#configurar").click(function  () {
+    $("#notif").hide();
   })
 
 </script>
