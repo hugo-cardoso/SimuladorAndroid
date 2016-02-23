@@ -23,9 +23,9 @@
   }
   
   .notf_bar{
-    width: 330px;
+    width: 338px;
     height: 50px;
-    margin-left: 14px;
+    margin-left: 10px;
     align-items: center;
     display: flex;
     background-color: rgb(55, 66, 70);
@@ -40,36 +40,179 @@
     line-height: 15px;
   }
 
+  .margin_left10{
+    margin-left: 10px;
+  }
+
+  .mdl-slider__background-flex{
+    height: 3px;  
+  }
+
 </style>
 
 <div class="display">
 
-<div id="abrir" class="notf">
-  <div style="padding-right: 5px; color: white;" align="right">
-    <i style="font-size: 17px;line-height: 14px;" class="material-icons">network_wifi</i>
-    <i style="font-size: 17px;line-height: 14px;" class="material-icons">network_cell</i>
-    <i style="font-size: 17px; line-height: 14px;" class="material-icons">battery_full</i>
-    <span style="font-size: 14px; color: white; line-height: 14px;">11:35</span>
-  </div>
-</div>
+    <!-- Barra de notificação -->
+    <div id="abrir" class="notf">
+      <div style="padding-right: 5px; color: white;" align="right">
+        <i style="font-size: 17px;line-height: 14px; margin-top: 2px;" class="material-icons">network_wifi</i>
+        <i style="font-size: 17px;line-height: 14px;" class="material-icons">network_cell</i>
+        <i style="font-size: 17px; line-height: 14px;" class="material-icons">battery_full</i>
+        <span style="font-size: 14px; color: white; line-height: 20px; padding-bottom: 5px; float: right;">11:35</span>
+      </div>
+    </div>
 
-<div id="notif" style="width: 360px; height: 573px; position: absolute; display: none; top: 10px; background: rgba(0, 0, 0, .5);"> 
+    <!-- Tooltip -->
+    <div class="mdl-tooltip" for="abrir">
+    Abrir barra de notificações.
+    </div>
+
+<!-- Conteúdo da barra -->
+
+<div id="notif" style="width: 360px; height: 593px; position: absolute; display: none; top: 10px; background: rgba(0, 0, 0, .5);"> 
+
+<!-- Abrir barra 1 -->
+
   <div id="abrir1" class="notf_bar">
     
     <p class="notf_bar1">11:35 <br><span style="font-size: 11px;">21 de Fevereiro de 2016</span></p>
     <div class="mdl-layout-spacer"></div>
-    <i style="font-size: 20px;" class="material-icons">network_wifi</i>
-    <i style="font-size: 20px;" class="material-icons">network_cell</i>
-    <i style="font-size: 20px;" class="material-icons">battery_full</i>
-    <i style="color: #04BBCE;" class="material-icons padding_right16">account_circle</i>
+    <div style="position: absolute; right: 55px; top: 11px;">
+      <span id="barra_menor">
+        <i style="font-size: 20px;" class="material-icons">network_wifi</i>
+        <i style="font-size: 20px;" class="material-icons">network_cell</i>
+        <i style="font-size: 20px;" class="material-icons">battery_full</i>
+      </span>
+      <span id="barra_maior" style="display: none;">
+        <i style="font-size: 20px; margin-right: 10px;" class="material-icons">battery_full</i>
+        <a href="configurar.html" target="iframe"><i style="font-size: 20px; margin-right: 10px;" class="material-icons">settings</i></a>
+      </span>
+    </div>
+    <i style="color: #04BBCE; position: absolute; right: 10px; top: 10px; " class="material-icons padding_right16">account_circle</i>
 
   </div>
-  <div style="width: 330px; height: 10px; background-color: #253238; margin-left: 14px;"> </div>
-  <div id="notif1" style="width: 330px; height: 300px; background-color: #253238; display: none; margin-left: 14px;"> </div>
-  
-    
 
-    <div style="width: 330px; height: 60px; background-color: white; border-radius: 3px; margin-left: 14px; margin-top: 10px;"></div>
+  <!-- Conteudo da notificação 1 -->
+  <div id="notif1" style="width: 338px; height: 350px; background-color: #253238; display: none; margin-left: 10px;">
+    
+    <div style="padding: 20px; padding-left: 0px; padding-right: 0px;">
+      <!-- Slider with Starting Value -->
+      <input class="mdl-slider mdl-js-slider" type="range"
+        min="0" max="100" value="75" tabindex="0">
+    </div>
+
+    <div align="center" style="float: left; width: 169px;">
+      
+      <div align="center" style="float: left; width: 139px; margin-left: 15px; border-bottom: 1px solid rgb(55, 66, 70);">
+        <i style="font-size: 25px; color: white; padding: 10px;" class="material-icons">network_wifi</i>
+      </div>
+
+      <div style="float: left; width: 100%; height: 20px; text-align: center; align-items: center; display: flex; margin-top: 5px;">
+        <label style="margin-left: 60px; color: #C7C7C7; font-size: 10px;">ATT_IL</label><i style="font-size: 20px; color: #C7C7C7;" class="material-icons">arrow_drop_down</i>
+      </div>
+
+    </div>
+
+    <div align="center" style="float: left; width: 169px;">
+      
+      <div align="center" style="float: left; width: 139px; margin-left: 15px; border-bottom: 1px solid rgb(55, 66, 70);">
+        <i id="bluetooth" style="font-size: 25px; color: #545F65; padding: 10px;" class="material-icons">bluetooth_disabled</i>
+      </div>
+
+      <div style="float: left; width: 100%; height: 20px; text-align: center; align-items: center; display: flex; margin-top: 5px; ">
+        <label style="margin-left: 57px; color: #C7C7C7; font-size: 10px;">Bluetooth</label>
+        <i style="font-size: 20px; color: #C7C7C7;" class="material-icons">arrow_drop_down</i>
+      </div>
+
+    </div>
+
+    <div align="center" style="float: left; width: 33.3%; margin-top: 25px;">
+      
+      <div align="center" style="padding-left: 10px; padding-right: 10px;">
+        <i style="font-size: 25px; color: white; padding: 10px;" class="material-icons">network_cell</i>
+      </div>
+
+      <div style="float: left; width: 100%; height: 20px; text-align: center;">
+        <label style="color: #C7C7C7; font-size: 10px;">Oi</label>
+      </div>
+
+    </div>
+
+    <div align="center" style="float: left; width: 33.3%; margin-top: 25px;">
+      
+      <div align="center" style="padding-left: 10px; padding-right: 10px;">
+        <i style="font-size: 25px; color: #545F65; padding: 10px;" class="material-icons">airplanemode_inactive</i>
+      </div>
+
+      <div style="float: left; width: 100%; height: 20px; text-align: center;">
+        <label style="color: #C7C7C7; font-size: 10px;">Modo avião</label>
+      </div>
+
+    </div>
+
+    <div align="center" style="float: left; width: 33.3%; margin-top: 25px;">
+      
+      <div align="center" style="padding-left: 10px; padding-right: 10px;">
+        <i style="font-size: 25px; color: white; padding: 10px;" class="material-icons">stay_current_portrait</i>
+      </div>
+
+      <div style="float: left; width: 100%; height: 20px; text-align: center; padding-right: 10px;">
+        <label style="color: #C7C7C7; font-size: 10px;">Retrato</label>
+      </div>
+
+    </div>
+
+    <div align="center" style="float: left; width: 50%; margin-top: 10px; margin-top: 25px;">
+
+      <div style="padding-left: 25px;">
+      
+        <div align="center" style="padding-left: 10px; padding-right: 10px;">
+          <i style="font-size: 25px; color: #545F65; padding: 10px;" class="material-icons">flash_off</i>
+        </div>
+
+        <div style="float: left; width: 100%; height: 20px; text-align: center; padding-right: 10px;">
+          <label style="color: #C7C7C7; font-size: 10px;">Lanterna</label>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div align="center" style="float: left; width: 50%; margin-top: 10px; margin-top: 25px;">
+
+      <div style="padding-right: 25px;">
+      
+        <div align="center" style="padding-left: 10px; padding-right: 10px;">
+          <i style="font-size: 25px; color: #545F65; padding: 10px;" class="material-icons">portable_wifi_off</i>
+        </div>
+
+        <div style="float: left; width: 100%; height: 20px; text-align: center; padding-right: 10px;">
+          <label style="color: #C7C7C7; font-size: 10px;">Roteador Wi-Fi</label>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div style="width: 338px; height: 10px; background-color: #253238; margin-left: 10px; border-radius: 0px 0px 2px 2px;"> </div>
+  
+    <!-- Notificação -->
+    <div id="notificacao1" style="width: 338px; height: 60px; background-color: white; border-radius: 2px; margin-left: 10px; margin-top: 10px; align-items: center; display: flex;">
+      
+      <i style="font-size: 40px; padding: 10px; color: #757575;" class="material-icons">lens</i>
+      <div style="height: 30px; width: 250px;">
+        <p style="line-height: 10px;">Notificação</p>
+        <p style="line-height: 0px; font-size: 12px;">Descrição</p>
+      </div>
+
+    </div>
+    <!-- Tooltip -->
+    <div class="mdl-tooltip" for="notificacao1">
+    Ao tocar será redirecionado para o aplicativo da notificação.
+    </div>
 
   <!-- Colored icon button -->
 <div align="center" style="width: 330px;">
@@ -79,7 +222,7 @@
 </div>
 </div>
 
-  <iframe src="configurar.html" style="width: 360px; height: 600px;" frameborder="0"></iframe>
+  <iframe id="iframe" name="iframe" src="inicio.html" style="width: 360px; height: 620px;" frameborder="0"></iframe>
 
 <!--   <div class="navdroid">
     <img style="width: 100%;" src="nav.png">
@@ -97,6 +240,8 @@
   })
   $("#abrir1").click(function  () {
     $("#notif1").slideToggle("slow");
+    $("#barra_menor").toggle();
+    $("#barra_maior").toggle();
     if($("#abrir1").height() == 50){
         $(this).animate({
           height: 120
@@ -106,6 +251,15 @@
         $(this).animate({
           height: 50
         })
+    }
+  })
+
+  $("#bluetooth").click(function(){
+    if($(this).html() == "bluetooth_disabled"){
+      $(this).html("bluetooth").css("color", "white");
+    }
+    else if($(this).html() == "bluetooth"){
+      $(this).html("bluetooth_disabled").css("color", "#545F65");
     }
   })
 
