@@ -1,11 +1,17 @@
 body {
-  background-color: black;
   overflow: hidden;
+  background: url("../teste.png");
+  background-color: white;
+  background-position: center top;
+}
+
+label p span a {
+  font-family: 'Roboto', sans-serif;
 }
 
 .display{
   width: 360px;
-  height: 618px;
+  height: 638px;
   margin: auto;
   background-color: white;
   margin-top: 10px;
@@ -18,11 +24,17 @@ body {
 
 .page-content{
   padding-bottom: 50px;
+  background-color: white;
+}
+
+.mdl-layout__content{
+  background-color: white;
 }
 
 iframe {
   margin: 0px;
   padding: 0px;
+  background-color: white;
 
 }
 
