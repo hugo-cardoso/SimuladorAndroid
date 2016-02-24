@@ -7,13 +7,20 @@
       <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-cyan.min.css" />
       <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
       <link rel="stylesheet" type="text/css" href="css/style.css">
-      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
       <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     </head>
 <body>
 
 <style>
+
+body {
+  overflow: hidden;
+  background: url("teste.png");
+  background-color: white;
+  background-position: center top;
+}
 
   .notf{
     width: 360px; 
@@ -23,7 +30,7 @@
   }
   
   .notf_bar{
-    width: 338px;
+    width: 340px;
     height: 50px;
     margin-left: 10px;
     align-items: center;
@@ -33,11 +40,20 @@
   }
 
   .notf_bar1{
-    font-size: 15px;
+    font-size: 13px;
+    font-weight: 500;
     margin-left: 14px;
-    margin-top: 15px;
+    margin-top: 25px;
     font-family: 'Roboto', sans-serif;
     line-height: 15px;
+    position: relative;
+    bottom: 0px;
+  }
+
+  .notf_bar2{
+    font-size: 12px; 
+    font-weight: 300;
+    color: #D6D6D6;
   }
 
   .margin_left10{
@@ -58,7 +74,7 @@
         <i style="font-size: 17px;line-height: 14px; margin-top: 2px;" class="material-icons">network_wifi</i>
         <i style="font-size: 17px;line-height: 14px;" class="material-icons">network_cell</i>
         <i style="font-size: 17px; line-height: 14px;" class="material-icons">battery_full</i>
-        <span style="font-size: 14px; color: white; line-height: 20px; padding-bottom: 5px; float: right;">11:35</span>
+        <span style="font-size: 14px; font-weight: 400; color: white; line-height: 20px; padding-bottom: 5px; float: right; font-family: 'Roboto', sans-serif;" class="hora"><!-- Hora --></span>
       </div>
     </div>
 
@@ -69,13 +85,13 @@
 
 <!-- Conteúdo da barra -->
 
-<div id="notif" style="width: 360px; height: 593px; position: absolute; display: none; top: 10px; background: rgba(0, 0, 0, .5);"> 
+<div id="notif" style="width: 360px; height: 638px; position: absolute; display: none; top: 10px; background: rgba(0, 0, 0, .5);"> 
 
 <!-- Abrir barra 1 -->
 
   <div id="abrir1" class="notf_bar">
     
-    <p class="notf_bar1">11:35 <br><span style="font-size: 11px;">21 de Fevereiro de 2016</span></p>
+    <p class="notf_bar1"><span class="hora"><!-- 11:35 --></span><br><span class="notf_bar2 data1"><!-- terça-feira, 23 de fevereiro --></span></p>
     <div class="mdl-layout-spacer"></div>
     <div style="position: absolute; right: 55px; top: 11px;">
       <span id="barra_menor">
@@ -93,7 +109,7 @@
   </div>
 
   <!-- Conteudo da notificação 1 -->
-  <div id="notif1" style="width: 338px; height: 350px; background-color: #253238; display: none; margin-left: 10px;">
+  <div id="notif1" style="width: 340px; height: 350px; background-color: #253238; display: none; margin-left: 10px;">
     
     <div style="padding: 20px; padding-left: 0px; padding-right: 0px;">
       <!-- Slider with Starting Value -->
@@ -197,10 +213,10 @@
 
   </div>
 
-  <div style="width: 338px; height: 10px; background-color: #253238; margin-left: 10px; border-radius: 0px 0px 2px 2px;"> </div>
+  <div style="width: 340px; height: 10px; background-color: #253238; margin-left: 10px; border-radius: 0px 0px 2px 2px;"> </div>
   
     <!-- Notificação -->
-    <div id="notificacao1" style="width: 338px; height: 60px; background-color: white; border-radius: 2px; margin-left: 10px; margin-top: 10px; align-items: center; display: flex;">
+    <div id="notificacao1" style="width: 340px; height: 60px; background-color: white; border-radius: 2px; margin-left: 10px; margin-top: 10px; align-items: center; display: flex;">
       
       <i style="font-size: 40px; padding: 10px; color: #757575;" class="material-icons">lens</i>
       <div style="height: 30px; width: 250px;">
@@ -245,12 +261,22 @@
     if($("#abrir1").height() == 50){
         $(this).animate({
           height: 120
-        })
+        });
+        $(".notf_bar1").animate({
+          marginTop: 80,
+          fontSize: 18
+        });
+        // $(".notf_bar2").html("ter,23 de fev");
     }
     if($("#abrir1").height() == 120){
         $(this).animate({
           height: 50
-        })
+        });
+        $(".notf_bar1").animate({
+          marginTop: 15,
+          fontSize: 13
+        });
+        // $(".notf_bar2").html("terça-feira, 23 de fevereiro");
     }
   })
 
@@ -262,15 +288,15 @@
       $(this).html("bluetooth_disabled").css("color", "#545F65");
     }
   })
-  
+
   $("#configurar").click(function  () {
     $("#notif").hide();
   })
 
 </script>
-
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/hora.js"></script>
     </body>
   </html>

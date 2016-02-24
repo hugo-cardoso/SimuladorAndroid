@@ -1,11 +1,15 @@
 body {
   overflow: hidden;
-  background: url("../teste.png");
-  background-color: white;
-  background-position: center top;
+  background-color: black;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;  
 }
 
-label p span a {
+label p span a h1 {
   font-family: 'Roboto', sans-serif;
 }
 
@@ -34,7 +38,7 @@ label p span a {
 iframe {
   margin: 0px;
   padding: 0px;
-  background-color: white;
+  background-color: black;
 
 }
 
