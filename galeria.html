@@ -1,0 +1,174 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-cyan.min.css" />
+      <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    </head>
+
+<body>
+
+<style>
+  
+  body {
+    background-color: white;
+  }
+
+  hr{
+        border-top: 1px solid #ccc;
+  }
+
+  .nselecionado{
+    color: black !important;
+  }
+
+  .selecionado{
+    color: rgb(0,150,136)!important;
+    font-weight: bold;
+  }
+
+  .mdl-layout__drawer .mdl-navigation .mdl-navigation__link {
+    padding-bottom: 10px;
+    padding-top: 10px;
+  }
+
+  .imagem_left{
+    width: 179px; 
+    height: 180px; 
+    background-color: red; 
+    float: left; 
+    border: 1px solid white; 
+    border-left: 0px;
+  }
+
+  .imagem_right{
+    width: 179px; 
+    height: 180px; 
+    background-color: red; 
+    float: left; 
+    border: 1px solid white; 
+    border-right: 0px;
+  }
+
+  .img_desc{
+    margin-top: 120px;
+    padding: 15px;
+  }
+
+  .img_title{
+    color: white;
+    font-weight: 350;
+    line-height: 10px;
+  }
+
+  .img_sub{
+    color: #cecece;
+    font-weight: 350;
+    font-size: 12px;
+    margin: 0px;
+    line-height: 10px;
+  }
+
+  .img1{
+    background: url('img/IMG_20160225_183305130.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .img2{
+    background: url('http://demandware.edgesuite.net/aahb_prd/on/demandware.static/-/Sites-Motorola_US-Library/default/dwbf83304c/corporate/about-us/img/corporate-history-story-hero.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+</style>
+
+<div class="page" style="overflow-hidden;">
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <!-- Title -->
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--expandable
+                  mdl-textfield--floating-label mdl-textfield--align-right">
+          <i class="material-icons">create_new_folder</i>
+          <i class="material-icons">done_all</i>
+      </div>
+    </div>
+  </header>
+  <div class="mdl-layout__drawer">
+    <nav class="mdl-navigation">
+      <a class="mdl-navigation__link nselecionado" href=""><i style="padding-right: 15px;" class="material-icons">camera_alt</i>Rolo da câmera</a>
+      <a class="mdl-navigation__link selecionado" href=""><i style="padding-right: 15px;" class="material-icons">folder</i>Álbuns</a>
+      <a class="mdl-navigation__link nselecionado" href=""><i style="padding-right: 15px;" class="material-icons">movie_filter</i>Curta metragem de fotos</a>
+      <a class="mdl-navigation__link nselecionado" href=""><i style="padding-right: 15px;" class="material-icons">movie</i>Vídeos</a>
+      <hr>
+      <a id="add_open" class="mdl-navigation__link nselecionado"><span style="font-size: 14px; font-weight: bold;">Pessoas</span> <i style="padding-right: 15px; float: right;" class="material-icons">expand_more</i></a>
+      <a id="add_show" style="display: none;" class="mdl-navigation__link nselecionado"><i style="padding-right: 15px;" class="material-icons">person_add</i>Marcar alguém</a>
+      <hr>
+      <a class="mdl-navigation__link" href="">Link</a>
+      <a class="mdl-navigation__link" href="">Link</a>
+    </nav>
+  </div>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+
+    <a href="galeria_view.html">
+    <div class="imagem_left img1">
+      <div class="img_desc">
+        <label class="img_title">Rolo da câmera</label>
+        <p class="img_sub">1 foto</p>
+      </div>
+    </div>
+    </a>
+    <div class="imagem_right img2">
+      <div class="img_desc">
+        <label class="img_title">Bluetooth</label>
+        <p class="img_sub">1 foto</p>
+      </div>
+    </div>
+
+
+     <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+  <map name="navbar" id="navbar">
+    <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+  </map>
+
+
+
+    </div>
+  </main>
+</div>
+
+   
+</div>
+
+</div>
+
+
+    </body>
+      <script>
+      $("#add_open").click(function () {
+        $("#add_show").toggle("display");
+      })
+      </script>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </html>

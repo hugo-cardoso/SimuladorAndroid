@@ -1,0 +1,124 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-cyan.min.css" />
+      <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    </head>
+
+<body>
+
+<style>
+  
+  body {
+    background-color: white;
+    background: url('img/IMG_20160225_183305130.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  hr{
+        border-top: 1px solid #ccc;
+  }
+
+  .mdl-layout__header{
+    background: rgb(0, 0, 0, 0.3);
+    /* RGBa with 0.6 opacity */
+    background: rgba(0, 0, 0, 0.3);
+  }
+
+  .mdl-layout__content{
+    background-color: transparent;
+  }
+
+  .page-content{
+    background-color: transparent;
+  }
+
+  .spacer_icon{
+    margin-right: 10px;
+  }
+
+
+</style>
+
+<div class="page" style="overflow-hidden;">
+
+<!-- Always shows a header, even in smaller screens. -->
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <header class="mdl-layout__header">
+    <div class="mdl-layout__header-row">
+      <a href="javascript: history.go(-1)">
+      <span class="mdl-button mdl-js-button mdl-button--icon">
+      <i class="material-icons">arrow_back</i>
+      </span>
+      </a>
+      <!-- Title -->
+      <!-- Add spacer, to align navigation to the right -->
+      <div class="mdl-layout-spacer"></div>
+      <!-- Navigation. We hide it in small screens. -->
+      <span class="mdl-button mdl-js-button mdl-button--icon spacer_icon">
+      <i class="material-icons">edit</i>
+      </span>
+      <span class="mdl-button mdl-js-button mdl-button--icon spacer_icon">
+      <i class="material-icons">share</i>
+      </span>
+      <span class="mdl-button mdl-js-button mdl-button--icon spacer_icon">
+      <i class="material-icons">delete</i>
+      </span>
+      <button id="demo-menu-lower-right"
+              class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">more_vert</i>
+      </button>
+      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+        <li class="mdl-menu__item">Apresentação de slides</li>
+        <li class="mdl-menu__item">Mover para</li>
+        <li class="mdl-menu__item">Girar para a esquerda</li>
+        <li class="mdl-menu__item">Girar para a direita</li>
+        <li class="mdl-menu__item">Cortar</li>
+        <li class="mdl-menu__item">Definir imagem como</li>
+        <li class="mdl-menu__item">Detalhes</li>
+        <li class="mdl-menu__item">Imprimir</li>
+      </ul>
+    </div>
+  </header>
+  <main class="mdl-layout__content">
+    <div class="page-content"><!-- Your content goes here -->
+
+
+
+     <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+  <map name="navbar" id="navbar">
+    <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+  </map>
+
+
+
+    </div>
+  </main>
+</div>
+
+   
+</div>
+
+</div>
+
+
+    </body>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </html>

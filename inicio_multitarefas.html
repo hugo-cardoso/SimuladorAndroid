@@ -1,0 +1,155 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  </head>
+
+  <body>
+
+    <style>
+      
+      body {
+        background-color: white;
+        background: url("img/1-151225213J5.jpg");
+        background-size: cover;
+      }
+
+      .lbl_app {
+        font-size: 11px;
+      }
+
+
+    </style>
+
+    <div class="page">
+
+      <div style="position: absolute; top: 10px; width: 340px; margin-left: 10px;">
+        <div style="padding: 10px; background-color: white; height: 25px; border-radius: 3px;">
+          <div>
+            <img style="height: 20px; float: left; padding-top: 4px;" src="img/googlelogo_color_272x92dp.png">
+            <img style="height: 25px; float: right;" src="img/microphone.png">
+            <span style="height: 25px; float: right; padding-top: 2px; padding-right: 10px; color: #9C9C9C;">Diga "Ok Google"</span>
+          </div>
+        </div>
+      </div>
+
+
+      <dialog style="display: block; top: 175px; padding: 0px; border-radius: 3px;" id="modal" class="mdl-dialog">
+        <div style="padding: 0px;" class="mdl-dialog__content">
+
+          <div style="height: 50px; width: 100%; background-color: #263238; align-items: center; display: flex;">
+
+            <span style="width: 50px; height: 50px;">
+              <img style="width: 30px; padding: 10px;float: left;" src="img/ic_launcher_settings.png">
+            </span>
+            <div style="float: left; width: 190px;">
+              <label style="font-weight: 400; color: white; font-family: 'Roboto', sans-serif;">Configurar</label>
+            </div>
+            <div style="float: left; width: 40px;">
+              <a href="javascript: history.go(-1)">
+               <i style="color: white; font-weight: 300; font-size: 20px; padding-top: 5px;" class="material-icons">close</i>
+             </a>
+           </div>
+
+         </div>
+
+         <a href="configurar.html">
+          <img style="width: 100%;" src="img/configurar_thumbnail.png">
+        </a>
+        
+      </div>
+    </dialog>
+
+
+    <!-- NAV BAR -->
+
+    <div style="position: fixed; bottom: 0px;">
+      <img usemap="#navbar" style="width: 100%;" src="nav1.png">
+    </div>
+
+    <map name="navbar" id="navbar">
+      <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+      <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+      <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+    </map>
+
+  </div>
+</main>
+</div>
+
+</div>
+
+<body>
+
+
+  <script>
+    $("#drawer").click(function () {
+      $("#menu").toggle();
+    })
+    $(".drawer1").click(function () {
+      $("#menu").hide();
+    })
+  </script>
+  <script>
+
+    $( document ).ready(function() {
+      setInterval(function(){
+
+        var d = new Date();
+        var n = addZero(d.getHours());
+        var min = addZero(d.getMinutes());
+        var mes = d.getMonth();
+        var dia = d.getDay();
+        var diaMes = addZero(d.getDate());
+
+        var semana = new Array(6);
+        semana[0]='dom';
+        semana[1]='seg';
+        semana[2]='ter';
+        semana[3]='quar';
+        semana[4]='quin';
+        semana[5]='sex';
+        semana[6]='sab';
+
+        var meses = new Array(12);
+        meses[0]='jan';
+        meses[1]='fev';
+        meses[2]='mar';
+        meses[3]='abr';
+        meses[4]='mai';
+        meses[5]='jun';
+        meses[6]='jul';
+        meses[7]='ago';
+        meses[8]='set';
+        meses[9]='out';
+        meses[10]='nov';
+        meses[11]='dez';
+
+        $(".hora").html( n+":"+min );
+        $(".hora1").html( n+":"+min );
+        $(".data").html( semana[dia] + ", " + diaMes + " de " + meses[mes] );
+      }, 100);
+    });
+
+    function addZero(i) {
+      if (i < 10) {
+        i = "0" + i;
+      }
+      return i;
+    }
+
+
+
+  </script>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</body>
+</html>

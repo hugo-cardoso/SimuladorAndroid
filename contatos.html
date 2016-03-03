@@ -1,0 +1,226 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.blue-light_blue.min.css" />
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  </head>
+
+  <body>
+
+    <style>
+
+      body {
+        background-color: white;
+      }
+
+      hr{
+        border-top: 1px solid #ccc;
+      }
+
+      .mdl-layout__header{
+        background-color: #0288D1;
+        box-shadow: none;
+      }
+
+      .mdl-layout__content{
+        background-color: transparent;
+      }
+
+      .page-content{
+        background-color: transparent;
+      }
+
+      .spacer_icon{
+        margin-right: 10px;
+      }
+
+      .mdl-tabs__tab-bar{
+        border-bottom: 0px;
+        background-color: #0288D1;
+        box-shadow: rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px;
+      }
+
+      .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active::after {
+        background-color: white;
+        background: rgb(255, 255, 255);
+      }
+
+      .mdl-tabs__tab {
+        width: 50%;
+      }
+
+      .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+        color: white;
+      }
+
+      .mdl-tabs__panel{
+        margin-top: 15px;
+      }
+
+      .mdl-list__item-icon{
+        color: inherit !important;
+        font-size: 25px !important;
+      }
+
+
+      .alfabetica{
+        font-size: 15px;
+        padding-left: 10px; 
+        font-weight: bold;
+      }
+
+
+
+
+    </style>
+
+    <div class="page" style="overflow-hidden;">
+
+      <!-- Always shows a header, even in smaller screens. -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <a href="javascript: history.go(-1)">
+              <span class="mdl-layout-title">Contatos</span>
+            </a>
+            <!-- Title -->
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <span class="mdl-button mdl-js-button mdl-button--icon spacer_icon">
+              <i class="material-icons">search</i>
+            </span>
+            <button id="demo-menu-lower-right"
+            class="mdl-button mdl-js-button mdl-button--icon">
+            <span class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+            </span>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+          <li class="mdl-menu__item">Contatos para exibição</li>
+          <li class="mdl-menu__item">Importar/Exportar</li>
+          <li class="mdl-menu__item">Contas</li>
+          <li class="mdl-menu__item">Configurações</li>
+        </ul>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div id="contatos" class="page-content"><!-- Your content goes here -->
+
+        <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+          <div class="mdl-tabs__tab-bar">
+            <a href="#lannisters-panel" class="mdl-tabs__tab">FAVORITOS</a>
+            <a href="#targaryens-panel" class="mdl-tabs__tab is-active">TODOS</a>
+          </div>
+
+          <div class="mdl-tabs__panel" id="lannisters-panel">
+            <p>Em breve</p>
+          </div>
+          <div class="mdl-tabs__panel is-active" id="targaryens-panel">
+
+
+            <table style="width: 100%;">
+              <tr>
+                <td width="65px;">
+                  <span class="alfabetica">EU</span>
+                </td>
+                <td align="center" width="60px;" style="margin-bottom: 5px;">
+
+                  <div style="background: url(img/avatar.jpg); background-size: cover; color: white; border-radius: 40px; width: 40px; height: 40px; align-items: center;display: flex; margin-top: 10px; margin-bottom: 10px;" >
+
+                    <!-- <span style="text-align: center; width: 100%; font-size: 25px;">M</span> -->
+
+                  </div>
+
+                </td>
+                <td>Moto X Force</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="alfabetica">A</span>
+                </td>
+                <td align="center" width="60px;" style="margin-bottom: 5px;">
+
+                  <div style="background-color: #E91E63; color: white; border-radius: 40px; width: 40px; height: 40px; align-items: center;display: flex; margin-top: 10px; margin-bottom: 10px;" >
+
+                    <span style="text-align: center; width: 100%; font-size: 25px;">A</span>
+
+                  </div>
+
+                </td>
+                <td>Atento</td>
+              </tr>
+              <tr>
+                <td>
+                  <span class="alfabetica">O</span>
+                </td>
+                <td align="center" width="60px;">
+
+                  <div style="background-color: #0091EA; color: white; border-radius: 40px; width: 40px; height: 40px; align-items: center;display: flex; margin-top: 10px; margin-bottom: 10px;" >
+
+                    <span style="text-align: center; width: 100%; font-size: 25px;">O</span>
+
+                  </div>
+
+                </td>
+                <td>Operação Motorola</td>
+              </tr>
+
+            </table>
+
+            <!-- Tooltip -->
+            <div class="mdl-tooltip" for="contatos">
+              Contatos por ordem alfabética.
+            </div>
+
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Colored FAB button -->
+      <button style="position: fixed; right: 10px; bottom: 60px; z-index: 99; background-color: #0288D1; color: white;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+        <i class="material-icons">person_add</i>
+      </button>
+
+
+
+
+      <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+  <map name="navbar" id="navbar">
+    <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+  </map>
+
+
+
+    </div>
+  </main>
+</div>
+
+
+</div>
+
+</div>
+
+
+</body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</html>

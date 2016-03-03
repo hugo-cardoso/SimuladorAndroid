@@ -1,0 +1,620 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.blue-light_blue.min.css" />
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  </head>
+
+  <body>
+
+    <style>
+
+      body {
+        background-color: white;
+      }
+
+      hr{
+        border-top: 1px solid #ccc;
+      }
+
+      .mdl-layout__header{
+        background-color: #0288D1;
+      }
+
+      .mdl-layout__content{
+        background-color: transparent;
+      }
+
+      .page-content{
+        background-color: transparent;
+      }
+
+      .spacer_icon{
+        margin-right: 10px;
+      }
+
+      .mdl-tabs__tab-bar{
+        border-bottom: 0px;
+        background-color: #0288D1;
+        box-shadow: rgba(0, 0, 0, 0.137255) 0px 2px 2px 0px, rgba(0, 0, 0, 0.2) 0px 3px 1px -2px, rgba(0, 0, 0, 0.117647) 0px 1px 5px 0px;
+      }
+
+      .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active::after {
+        background-color: white;
+        background: rgb(255, 255, 255);
+      }
+
+      .mdl-tabs__tab {
+        width: 50%;
+      }
+
+      .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+        color: white;
+      }
+
+      .mdl-tabs__panel{
+        margin-top: 15px;
+      }
+
+      .mdl-list__item-icon{
+        color: inherit !important;
+        font-size: 25px !important;
+      }
+
+
+      .alfabetica{
+        font-size: 15px;
+        padding-left: 10px; 
+        font-weight: bold;
+      }
+
+      .mdl-textfield {
+        padding: 10px 0px;
+      }
+
+      .mdl-textfield__label {
+        top: 10px;
+        color: #A09F9F;
+      }
+
+      .mdl-textfield__label:after{
+        bottom: 9px;
+      }
+
+      .mdl-textfield__input{
+        border-bottom: 1px solid #A09F9F;
+      }
+
+      label.myLabel input[type="file"] {
+        position: fixed;
+        top: -1000px;
+      }
+
+      /***** Example custom styling *****/
+      .myLabel {
+        display: inline-block;
+      }
+      .myLabel:hover {
+      }
+      .myLabel:active {
+      }
+      .myLabel :invalid + span {
+      }
+      .myLabel :valid + span {
+      }
+
+      .thumb {
+        height: 80px;
+        width: 80px;
+      }
+
+
+    </style>
+
+    <div class="page" style="overflow:hidden;">
+
+      <!-- Always shows a header, even in smaller screens. -->
+      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header">
+          <div class="mdl-layout__header-row">
+            <a href="javascript: history.go(-1)">
+              <span class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="material-icons">arrow_back</i>
+              </span>
+            </a>
+            <a href="javascript: history.go(-1)">
+              <span style="margin-left: 30px;" class="mdl-layout-title">Histórico</span>
+            </a>
+            <!-- Title -->
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation. We hide it in small screens. -->
+            <button id="demo-menu-lower-right"
+            class="mdl-button mdl-js-button mdl-button--icon">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+          <a href="javascript: history.go(-1)"><li id="show-dialog" class="mdl-menu__item">Descartar alterações</li></a>
+        </ul>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="page-content"><!-- Your content goes here -->
+
+        <div style="margin-top: 25px; padding-left: 15px; float: left; width: 100%;">
+
+          <p style="font-size: 17px; margin-bottom: 0px;">Contato Google</p>
+          <p style="font-size: 13px; color:#A09F9F;">emaildocliente@gmail.com</p>
+
+        </div>
+
+
+        <table>
+          <tr>
+            <td width="75px">
+              <i style="margin-left: 10px;" class="material-icons cinza">person</i>
+            </td>
+            <td width="220px">
+              <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1">
+                <label class="mdl-textfield__label" for="sample1">Nome</label>
+              </div>
+            </td>
+            <td>
+              <i id="abrir_nome" style="margin-left: 10px;" class="material-icons cinza">expand_more</i>
+            </td>
+          </tr>
+        </table>
+        <div style="display: none;" id="nome">
+          <table>
+            <tr>
+              <td width="75px">
+
+              </td>
+              <td width="220px">
+                <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1">
+                  <label class="mdl-textfield__label" for="sample1">Nome do meio</label>
+                </div>
+              </td>
+              <td>
+
+              </td>
+            </tr>
+            <tr>
+              <td width="75px">
+
+              </td>
+              <td width="220px">
+                <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1">
+                  <label class="mdl-textfield__label" for="sample1">Sobrenome</label>
+                </div>
+              </td>
+              <td>
+
+              </td>
+            </tr>
+            <tr>
+              <td width="75px">
+
+              </td>
+              <td width="220px">
+                <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+                  <input class="mdl-textfield__input" type="text" id="sample1">
+                  <label class="mdl-textfield__label" for="sample1">Sufixo do nome</label>
+                </div>
+              </td>
+              <td>
+
+              </td>
+            </tr>
+          </table>
+        </div>
+        <table>
+          <tr>
+            <td width="75px">
+
+            </td>
+            <td width="220px">
+              <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1">
+                <label class="mdl-textfield__label" for="sample1">Nome fonético</label>
+              </div>
+            </td>
+            <td>
+              <i style="margin-left: 10px;" class="material-icons cinza">expand_more</i>
+            </td>
+          </tr>
+          <tr>
+            <td width="75px">
+
+            </td>
+            <td width="220px">
+              <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1">
+                <label class="mdl-textfield__label" for="sample1">Apelido</label>
+              </div>
+            </td>
+            <td>
+
+            </td>
+          </tr>
+        </table>
+
+        <table >
+          <tr>
+            <td style="vertical-align: top;" width="75px">
+              <i style="margin-left: 10px;" class="material-icons cinza">photo_camera</i>
+            </td>
+            <td width="220px">
+              <img align="center" class="thumb" style="width: 80px; max-width: 80px; height: 80px; float: left; background-color: #A09F9F;" id="list">
+              <!--  <i style="font-size: 50px; padding: 15px; color: white;" class="material-icons cinza">person</i> -->
+            </img>
+            <label style="margin-left: 10px; background-color: white;" class="myLabel mdl-button mdl-js-button mdl-button--raised">
+              <input type="file" onchange="previewFile()"/>
+              <span>ALTERAR</span>
+            </label>
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">person</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Telefone</label>
+            </div>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 60%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Celular</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">email</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">E-mail</label>
+            </div>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 60%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Casa</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">place</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Endereço</label>
+            </div>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 60%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Casa</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">event</i>
+          </td>
+          <td width="220px">
+            <div style="width: 85%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Data</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 60%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Aniversário</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">domain</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Empresa</label>
+            </div>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Cargo</label>
+            </div>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">insert_comment</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Notas</label>
+            </div>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">insert_comment</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">IM</label>
+            </div>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 60%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">AIM</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">dialer_sip</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Chamada na Internet</label>
+            </div>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">group</i>
+          </td>
+          <td width="220px">
+            <div style="width: 85%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Nome do grupo</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">public</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Website</label>
+            </div>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+      <table >
+        <tr>
+          <td width="75px">
+            <i style="margin-left: 10px;" class="material-icons cinza">device_hub</i>
+          </td>
+          <td width="220px">
+            <div style="width: 100%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Relacionamento</label>
+            </div>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+        <tr>
+          <td width="75px">
+
+          </td>
+          <td width="220px">
+            <div style="width: 60%;" class="mdl-textfield mdl-js-textfield">
+              <input class="mdl-textfield__input" type="text" id="sample1">
+              <label class="mdl-textfield__label" for="sample1">Assistente</label>
+            </div>
+            <i class="material-icons cinza">arrow_drop_down</i>
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      </table>
+
+    </div>
+
+
+
+    <!-- NAV BAR -->
+
+    <div style="position: fixed; bottom: 0px;">
+      <img usemap="#navbar" style="width: 100%;" src="nav.png">
+    </div>
+
+    <map name="navbar" id="navbar">
+      <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+      <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+      <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+    </map>
+
+
+
+  </div>
+</main>
+</div>
+
+
+</div>
+
+</div>
+
+
+</body>
+<script>
+  function previewFile() {
+    var preview = document.querySelector('.thumb');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+    reader.addEventListener("load", function () {
+      preview.src = reader.result;
+    }, false);
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+
+  $("#abrir_nome").click(function(){
+    $("#nome").slideToggle("fast");
+  })
+
+</script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</html>

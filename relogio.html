@@ -1,0 +1,232 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.grey-light_blue.min.css" />
+    <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  </head>
+
+  <body>
+
+    <style>
+
+      body {
+        background-color: #3F51B5;
+      }
+
+      hr{
+        border-top: 1px solid #ccc;
+      }
+
+      .page{
+        background-color: transparent;
+      }
+
+      .mdl-layout__header{
+        background-color: transparent;
+      }
+
+      .mdl-layout__content{
+        background-color: transparent;
+      }
+
+      .page-content{
+        background-color: transparent;
+      }
+
+      .spacer_icon{
+        margin-right: 10px;
+      }
+
+      .mdl-tabs__tab-bar{
+        border-bottom: 0px;
+        background-color: transparent;
+        box-shadow: none;
+      }
+
+      .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active::after {
+        background-color: red;
+        background: transparent;
+        color: red;
+      }
+
+      .mdl-tabs__tab {
+        width: 50%;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .mdl-tabs.is-upgraded .mdl-tabs__tab.is-active {
+        color: red;
+      }
+
+      .mdl-tabs__panel{
+        margin-top: 15px;
+        background-color: #transparent;
+      }
+
+      .is-active{
+        color: white !important;
+        font-weight: bold;
+      }
+
+
+
+    </style>
+
+    <div class="page" style="overflow:hidden;">
+
+      <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+        <div class="mdl-tabs__tab-bar">
+          <a href="#tab1" class="mdl-tabs__tab"><i style="padding-top: 10px;" class="material-icons">alarm</i></a>
+          <a href="#tab2" class="mdl-tabs__tab is-active"><i style="padding-top: 10px;" class="material-icons">query_builder</i></a>
+          <a href="#tab3" class="mdl-tabs__tab"><i style="padding-top: 10px;" class="material-icons">hourglass_full</i></a>
+          <a href="#tab4" class="mdl-tabs__tab"><i style="padding-top: 10px;" class="material-icons">timer</i></a>
+          <button style="margin-right: 20px; margin-left: 20px; margin-top: 7px;" id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+            <i style="color: white;" class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+          for="demo-menu-lower-right">
+          <li class="mdl-menu__item">Modo noturno</li>
+          <li class="mdl-menu__item">Configurações</li>
+          <li class="mdl-menu__item">Ajuda</li>
+          <li class="mdl-menu__item">Enviar feedback</li>
+        </ul>
+      </div>
+
+      <div align="center" class="mdl-tabs__panel" id="tab1">
+        <i style="color: rgba(255, 255, 255, 0.3); font-size: 120px; margin-top: 140px;" class="material-icons">alarm_off</i>
+        <p style="color: rgba(255, 255, 255, 0.3);">Nenhum alarme</p>
+
+
+      </div>
+
+      <div align="center" class="mdl-tabs__panel is-active" id="tab2">
+
+        <h1 class="hora" style="font-weight: 100; font-size: 75px; color: white; margin-bottom: 2px; line-height: 95px;"><!-- 11:35 --></h1>
+        <p class="data" style="color: white; font-size: 13px;"> <!-- Data --> </p>
+
+
+      </div>
+
+      <div align="center" class="mdl-tabs__panel" id="tab3">
+
+        <h1 style="font-weight: 100; font-size: 30px; color: white; margin-bottom: 2px; line-height: 95px;">Em breve</h1>
+
+
+      </div>
+
+      <div align="center" class="mdl-tabs__panel" id="tab4">
+
+        <h1 style="font-weight: 100; font-size: 30px; color: white; margin-bottom: 2px; line-height: 95px;">Em breve</h1>
+
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+
+
+  <!-- NAV BAR -->
+
+  <div style="position: fixed; bottom: 0px;">
+    <img usemap="#navbar" style="width: 100%;" src="nav.png">
+  </div>
+
+  <map name="navbar" id="navbar">
+    <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+  </map>
+
+
+
+</div>
+</main>
+</div>
+
+
+</div>
+
+</div>
+
+
+</body>
+<script>
+
+  $( document ).ready(function() {
+    setInterval(function(){
+
+      var d = new Date();
+      var n = addZero(d.getHours());
+      var min = addZero(d.getMinutes());
+      var mes = d.getMonth();
+      var dia = d.getDay();
+      var diaMes = addZero(d.getDate());
+
+      var semana = new Array(6);
+      semana[0]='dom';
+      semana[1]='seg';
+      semana[2]='ter';
+      semana[3]='qua';
+      semana[4]='qui';
+      semana[5]='sex';
+      semana[6]='sab';
+
+      var meses = new Array(12);
+      meses[0]='janeiro';
+      meses[1]='fevereiro';
+      meses[2]='março';
+      meses[3]='abril';
+      meses[4]='maio';
+      meses[5]='junho';
+      meses[6]='julho';
+      meses[7]='agosto';
+      meses[8]='setembro';
+      meses[9]='outubro';
+      meses[10]='novembro';
+      meses[11]='dezembro';
+
+      $(".hora").html( n+":"+min );
+      $(".data").html( semana[dia] + ", " + diaMes + " de " + meses[mes] );
+
+
+      if(n >= 12){
+        $("body").css("background-color", "#0176BC")
+      }
+      if(n >= 15){
+        $("body").css("background-color", "#24569B")
+      }
+      if(n >= 18){
+        $("body").css("background-color", "#433479")
+      }
+      if(n >= 21){
+        $("body").css("background-color", "#322B4C")
+      }
+      if(n >= 23){
+        $("body").css("background-color", "#212121")
+      }
+
+    }, 100);
+  });
+
+  function addZero(i) {
+    if (i < 10) {
+      i = "0" + i;
+    }
+    return i;
+  }
+
+</script>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+</html>

@@ -1,0 +1,244 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.teal-cyan.min.css" />
+      <script defer src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/style.css">
+      <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+      <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    </head>
+
+<body>
+
+<style>
+  
+  body {
+    background-color: white;
+  }
+
+  .shadow{
+    -webkit-box-shadow: 0px -6px 7px -1px rgba(0,0,0,0.31);
+    -moz-box-shadow: 0px -6px 7px -1px rgba(0,0,0,0.31);
+    box-shadow: 0px -6px 7px -1px rgba(0,0,0,0.31);
+  }
+
+  .tecla{
+    width: 33.33%;
+    height: 60px;
+    float: left;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 5px;
+  }
+
+  .number{
+    width: 100%;
+    padding-top: 10px;
+    float: left;
+    font-size: 35px;
+    font-weight: 200;
+    font-family: 'Roboto', sans-serif;
+    color: #0277BD;
+  }
+
+  .number_legend{
+    padding-top: 10px;
+    font-size: 11px;
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: #757575;
+  }
+
+    .number_gray{
+    width: 100%;
+    padding-top: 20px;
+    float: left;
+    font-size: 25px;
+    font-weight: 200;
+    font-family: 'Roboto', sans-serif;
+    color: #757575;
+  }
+
+  .item {
+      width: 100%;
+      border-bottom: 0px;
+      padding-bottom: 10px;
+      padding-top: 10px;
+      font-size: 14px;
+      font-family: 'Roboto', sans-serif;
+      letter-spacing: .01em;
+  }
+
+</style>
+
+<div class="page" style="overflow-hidden;">
+
+    <ul style="display: none;" id="add" class="demo-list-icon mdl-list">
+        <li class="mdl-list__item">
+          <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">group_add</i>
+            <span class="item">Adicionar aos contatos</span>
+          </span>
+        </li>
+    </ul>
+
+
+      <div class="shadow" style="position: absolute; bottom: 55px; width: 360px;">
+        <div style="background-color: white; height: 400px;">
+          <!-- Display -->
+          <div style="width: 350px; border-bottom: 1px solid #cecece; padding: 5px; float: left; align-items: center; display: flex;">
+
+
+          <div style="width: 50px; height: 60px; float: left; align-items: center; display: flex;">
+            <i id="more" style="font-size: 25px; padding-left: 10px; color: #757575; display: none;" class="material-icons">more_vert</i>
+          </div>
+
+          <div style="width: 250px; height: 35px; float: left; text-align: center;">
+          <label id="disp" style="margin-left: 12px; font-size: 30px; line-height: 30px; width: 250px;"></label>
+          </div>
+
+          <div style="width: 50px; height: 60px; float: left; align-items: center; display: flex;">
+          <i id="apagar" style="font-size: 25px; padding-left: 10px; color: #757575;" class="material-icons">backspace</i>
+          </div>
+
+<!--             <div style="width: 50px; height: 60px; float: left;  align-items: center; display: flex;">
+              <i id="more" style="font-size: 25px; padding-left: 15px; color: #757575; display: none;" class="material-icons">more_vert</i>
+            </div>
+            <div style="width: 280px; height: 30px; float: left; text-align: center;">
+              <label id="disp" style="margin-left: 12px; font-size: 30px;"></label>
+            </div>
+            <div style="width: 50px; height: 60px; float: left;">
+            <i id="apagar" style="font-size: 25px; padding-top: 12px; padding-left: 15px; color: #757575;" class="material-icons">backspace</i>
+            </div> -->
+
+          </div>
+
+          <!-- Números -->
+          <div style="width: 320px; padding-left: 20px; padding-right: 20px; float: left; margin-top: 10px;">
+
+            <div style="width: 100%; height: 220px;">
+
+              <div name="1" class="tecla">
+                <span class="number">1</span>
+                <span></span>
+              </div>
+              <div name="2" class="tecla">
+                <span class="number">2</span>
+                <span class="number_legend">ABC</span>
+              </div>
+              <div name="3" class="tecla">
+                <span class="number">3</span>
+                <span class="number_legend">DEF</span>
+              </div>
+              <div name="4" class="tecla">
+                <span class="number">4</span>
+                <span class="number_legend">GHI</span>
+              </div>
+              <div name="5" class="tecla">
+                <span class="number">5</span>
+                <span class="number_legend">JKL</span>
+              </div>
+              <div name="6" class="tecla">
+                <span class="number">6</span>
+                <span class="number_legend">MNO</span>
+              </div>
+              <div name="7" class="tecla">
+                <span class="number">7</span>
+                <span class="number_legend">PQRS</span>
+              </div>
+              <div name="8" class="tecla">
+                <span class="number">8</span>
+                <span class="number_legend">TUV</span>
+              </div>
+              <div name="9" class="tecla">
+                <span class="number">9</span>
+                <span class="number_legend">WXYZ</span>
+              </div>
+              <div name="*" class="tecla">
+                <span class="number_gray">*</span>
+              </div>
+              <div name="0" class="tecla">
+                <span class="number">0</span>
+                <span class="number_legend">+</span>
+              </div>
+              <div name="#" class="tecla">
+                <span class="number_gray">#</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div align="center">
+            <!-- Colored FAB button -->
+            <button style="background-color: #00CC4A;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+              <i style="color: white;" class="material-icons">phone</i>
+            </button>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+
+     <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+  <map name="navbar" id="navbar">
+    <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+    <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+  </map>
+
+</div>
+
+
+    </body>
+    <script>
+
+    $(".tecla").click(function () {
+      $( "#disp" ).append( $(this).attr("name") );
+      if($("#disp").html() == ""){
+        $("#more").hide();
+        $("#add").hide();
+      }
+      if($("#disp").html() == "*#06#"){
+        $("#more").hide();
+        $("#add").hide();
+        alert("351515462817548")
+      }
+      else{
+        $("#more").show();
+        $("#add").show();
+      }
+    })
+
+    $('#apagar').click( function(){
+    var tamanho = $('#disp').html().length-1;
+    var texto = $('#disp').html();
+    var texto_menos_um = texto.substring(0,tamanho);
+
+    $('#disp').html(texto_menos_um);
+      if($("#disp").html() == ""){
+        $("#more").hide();
+        $("#add").hide();
+      }
+      else{
+        $("#more").show();
+        $("#add").show();
+      }
+
+    })
+
+    </script>
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  </html>
