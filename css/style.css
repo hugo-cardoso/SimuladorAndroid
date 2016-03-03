@@ -6,11 +6,20 @@ body {
   -khtml-user-select: none;    /* Konqueror */
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* IE/Edge */
-  user-select: none;  
+  user-select: none;
+  cursor:url(../img/hand.png),url(../img/hand.cur),auto;
 }
 
 label p span a h1 {
   font-family: 'Roboto', sans-serif;
+}
+
+a{
+  cursor:url(../img/hand.png),url(../img/hand.cur),auto;
+}
+
+*{
+    cursor:url(../img/hand.png),url(../img/hand.cur),auto !important;
 }
 
 .display{
@@ -242,4 +251,35 @@ a{
 .minilist_item {
   font-size: 15px;
   font-family: 'Roboto', sans-serif;
+}
+
+/* SCROLLBAR */
+
+
+/* Let's get this party started */
+::-webkit-scrollbar {
+    width: 5px;
+}
+ 
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+    background: rgba(0,150,136,0.8); 
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+::-webkit-scrollbar-thumb:window-inactive {
+  background: rgba(0,150,136,0.4); 
+}
+
+
+.cinza{
+  color: #676767;
 }
