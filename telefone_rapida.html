@@ -103,16 +103,20 @@
           </div>
 
           <div class="mdl-tabs__panel" id="starks-panel">
-            <div style="background: #E91E63; color: white; width: 49.7%; height: 100px; align-items: center;display: flex; margin-right: 1px; float: left;" >
+            <a href="telefone_atento.html">
+              <div style="background: #E91E63; color: white; width: 49.7%; height: 100px; align-items: center;display: flex; margin-right: 1px; float: left;" >
 
-              <span style="text-align: center; width: 100%; font-size: 25px;">A</span>
+                <span style="text-align: center; width: 100%; font-size: 25px;">A</span>
 
-            </div>
-            <div style="background-color: #0091EA; color: white; width: 50%; height: 100px; align-items: center;display: flex; float: left;" >
+              </div>
+            </a>
+            <a href="telefone_motorola.html">
+              <div style="background-color: #0091EA; color: white; width: 50%; height: 100px; align-items: center;display: flex; float: left;" >
 
-              <span style="text-align: center; width: 100%; font-size: 25px;">O</span>
+                <span style="text-align: center; width: 100%; font-size: 25px;">O</span>
 
-            </div>
+              </div>
+            </a>
           </div>
           <div class="mdl-tabs__panel" id="lannisters-panel" align="center">
             <i style="color: #cecece; font-size: 100px; margin-top: 15px;" class="material-icons">query_builder</i>
@@ -143,67 +147,67 @@
               </td>
               <td align="center" width="60px;">
 
-                <div style="background-color: #0091EA; color: white; border-radius: 40px; width: 40px; height: 40px; align-items: center;display: flex; margin-top: 10px; margin-bottom: 10px;" >
+                <a href="telefone_motorola.html"><div style="background-color: #0091EA; color: white; border-radius: 40px; width: 40px; height: 40px; align-items: center;display: flex; margin-top: 10px; margin-bottom: 10px;" >
 
                   <span style="text-align: center; width: 100%; font-size: 25px;">O</span>
 
                 </div>
+              </a>
+            </td>
+            <td><a href="telefone_motorola.html">Operação Motorola</a></td>
+          </tr>
 
-              </td>
-              <td>Operação Motorola</td>
-            </tr>
+        </table>
 
-          </table>
-
-
-        </div>
-
-
-        <div style="width: 100%; bottom: 60px; position: fixed;" align="right">
-          <!-- Colored FAB button -->
-          <a href="telefone.html" style="background-color: #0086C8; margin-right: 10px;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-            <i style="color: white;" class="material-icons">dialpad</i>
-          </a>
-        </div>
-
-
-
-
-        <!-- NAV BAR -->
-
-        <div style="position: fixed; bottom: 0px;">
-          <img usemap="#navbar" style="width: 100%;" src="nav.png">
-        </div>
-
-        <map name="navbar" id="navbar">
-          <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
-          <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
-          <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
-        </map>
 
       </div>
 
 
+      <div style="width: 100%; bottom: 60px; position: fixed;" align="right">
+        <!-- Colored FAB button -->
+        <a href="telefone.html" style="background-color: #0086C8; margin-right: 10px;" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
+          <i style="color: white;" class="material-icons">dialpad</i>
+        </a>
+      </div>
+
+
+
+
+      <!-- NAV BAR -->
+
+      <div style="position: fixed; bottom: 0px;">
+        <img usemap="#navbar" style="width: 100%;" src="nav.png">
+      </div>
+
+      <map name="navbar" id="navbar">
+        <area  alt="" title="" href="javascript: history.go(-1)" shape="rect" coords="0,50,100,0" style="outline:1px solid red;" target="_self"/>
+        <area  alt="" title="" href="inicio.html" shape="rect" coords="125,50,225,0" style="outline:1px solid red;" target="_self"/>
+        <area  alt="" title="" href="inicio_multitarefas.html" shape="rect" coords="200,50,300,0" style="outline:1px solid red;" target="_self"/>
+      </map>
+
     </div>
+
 
   </div>
 
+</div>
 
-  <!-- MODAL -->
 
-  <dialog id="modal" class="mdl-dialog">
-    <h4 style="margin-bottom: 10px;" class="mdl-dialog__title">Importar/exportar contatos</h4>
-    <div style="color: black;" class="mdl-dialog__content">
-      
-      <h5 style="font-size: 15px; font-weight: 400; margin-bottom: 5px;">Importar do armazenamento</h5>
-      <h5 style="font-size: 15px; font-weight: 400; margin-bottom: 5px;">Exportar para armazenamento</h5>
-      <h5 style="font-size: 15px; font-weight: 400; margin-bottom: 5px;">Compartilhar contatos visíveis</h5>
+<!-- MODAL -->
 
-    </div>
-    <div class="mdl-dialog__actions">
-      <button id="close" type="button" class="mdl-button close1">CANCELAR</button>
-    </div>
-  </dialog>
+<dialog id="modal" class="mdl-dialog">
+  <h4 style="margin-bottom: 10px;" class="mdl-dialog__title">Importar/exportar contatos</h4>
+  <div style="color: black;" class="mdl-dialog__content">
+
+    <h5 style="font-size: 15px; font-weight: 400; margin-bottom: 5px;">Importar do armazenamento</h5>
+    <h5 style="font-size: 15px; font-weight: 400; margin-bottom: 5px;">Exportar para armazenamento</h5>
+    <h5 style="font-size: 15px; font-weight: 400; margin-bottom: 5px;">Compartilhar contatos visíveis</h5>
+
+  </div>
+  <div class="mdl-dialog__actions">
+    <button id="close" type="button" class="mdl-button close1">CANCELAR</button>
+  </div>
+</dialog>
 
 
 </body>
